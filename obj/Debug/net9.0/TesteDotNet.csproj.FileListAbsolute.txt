@@ -12,3 +12,4 @@ C:\Users\leona\Documents\estudos\c#\TesteDotNet\obj\Debug\net9.0\refint\TesteDot
 C:\Users\leona\Documents\estudos\c#\TesteDotNet\obj\Debug\net9.0\TesteDotNet.pdb
 C:\Users\leona\Documents\estudos\c#\TesteDotNet\obj\Debug\net9.0\TesteDotNet.genruntimeconfig.cache
 C:\Users\leona\Documents\estudos\c#\TesteDotNet\obj\Debug\net9.0\ref\TesteDotNet.dll
+C:\Users\leona\Documents\estudos\c#\TesteDotNet\obj\Debug\net9.0\TesteDotNet.sourcelink.json

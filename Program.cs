@@ -24,6 +24,7 @@ class Program
                     }
                     break;
                 case "B":
+                    buscarLivros(listaLivros);
                     break;
                 case "D":
                     break;
@@ -47,6 +48,21 @@ class Program
         return listaLivros;
     }
 
+    public static List<Livros> buscarLivros(List<Livros> listaLivros) {
+        List<Livros> listaLivrosEncontrados;
+        
+        Console.Clear();
+        Console.Write("Digite o nome do livro que deseja encontrar: ");
+        string nomeLivro = Console.ReadLine();
+
+        listaLivrosEncontrados = listaLivros.Where(livro => livro.Nome.ToUpper() == nomeLivro.ToUpper()).ToList();
+
+        foreach (Livros livro in listaLivrosEncontrados) {
+            Console.WriteLine(livro);
+        }
+
+        return listaLivrosEncontrados;         
+    }
 
 
 }

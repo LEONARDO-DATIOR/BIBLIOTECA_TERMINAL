@@ -6,8 +6,8 @@ public class ManipulaArquivo() {
 
     public static void SalvaDadosLivros(List<Livros> listaLivros) {
         string json = JsonSerializer.Serialize(listaLivros, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(caminhoArquivoLivros, string.Empty);
-        File.WriteAllText(caminhoArquivoLivros, json);
+        File.WriteAllText(caminhoArquivoLivros, string.Empty); // limpa o arquivo 
+        File.WriteAllText(caminhoArquivoLivros, json); // salva novo json no arquivo
         Console.WriteLine("SALVANDO LIVROS NO ARQUIVO.");
 
     } 

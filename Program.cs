@@ -11,7 +11,7 @@ class Program
         string opcao;
         do {
             Console.WriteLine("\n------------------\nEscolha alguma opcao: ");
-            Console.WriteLine("C - Cadastras\nE - Exibir\nB - Buscar\nD - Deletar\nS - Sair\n");
+            Console.WriteLine("C - Cadastras\nE - Exibir\nA - Alterar\nB - Buscar\nD - Deletar\nS - Sair\n");
             opcao = Console.ReadLine();
             Livros Livro = new Livros();
             switch (opcao.ToUpper()) {
@@ -22,6 +22,9 @@ class Program
                     foreach (Livros livro in listaLivros) {
                         Console.WriteLine(livro);
                     }
+                    break;
+                case "A":
+                    Livro.AtualizarLivros(listaLivros);
                     break;
                 case "B":
                     listaLivros = Livro.BuscarLivros(listaLivros);

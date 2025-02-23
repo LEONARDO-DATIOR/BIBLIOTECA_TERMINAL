@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text.Json;
 
 public class Livros {
     // ATRIBUTO
@@ -36,7 +37,7 @@ public class Livros {
 
     // METODOS
     public List<Livros> CadastrarLivros(List<Livros> listaLivros) {
-         Console.Clear();
+        Console.Clear();
         Console.WriteLine("Digite os dados do livro: ");
         string nome = Console.ReadLine();
         Console.WriteLine("Data de lancamento: ");
@@ -63,9 +64,20 @@ public class Livros {
         return listaLivrosEncontrados;     
     }
 
-    // public List<Livros> AtualizarLivros(List<Livros> listaLivros) {
+    public Livros AtualizarLivros(List<Livros> listaLivros) {
+        Console.Clear();
+        Console.WriteLine("Digite o nóme do livro que deseja modificar: ");
+        string nomeLivro = Console.ReadLine();
+        Livros livroComNome = listaLivros.FirstOrDefault(livro => livro.Nome.Equals(nomeLivro));
+        
+        Console.WriteLine("novo nome: ");
+        livroComNome.Nome = Console.ReadLine();
+        Console.WriteLine("nova data lancamento: ");
+        livroComNome.DataLancamento = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", CultureInfo.InvariantCulture);
 
-    // }
+        ManipulaArquivo.SalvaDadosLivros(listaLivros);
+        return livroComNome;
+    }
 
     public List<Livros> DeletarLivros(List<Livros> listaLivros) {
          Console.Clear();
